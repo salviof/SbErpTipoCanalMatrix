@@ -2,7 +2,7 @@ package br.org.coletivoJava.fw.erp.implementacao.transportecomunicacao;
 
 import br.org.coletivoJava.fw.api.erp.chat.ERPChat;
 import br.org.coletivoJava.fw.api.erp.chat.ErroConexaoServicoChat;
-import br.org.coletivoJava.fw.api.erp.chat.model.ItfUsuarioChat;
+import br.org.coletivoJava.fw.api.erp.chat.model.ComoUsuarioChat;
 import com.super_bits.modulosSB.SBCore.modulos.comunicacao.ItfDialogo;
 import com.super_bits.modulosSB.SBCore.integracao.libRestClient.api.erp.repositorioLinkEntidades.RepositorioLinkEntidadesGenerico;
 import br.org.coletivoJava.fw.api.erp.transportecomunicacao.MsgDisparoMatrix;
@@ -23,7 +23,7 @@ public class MsgDisparoMatriximpl extends RepositorioLinkEntidadesGenerico
     public String dispararInicioComunicacao(ItfDialogo pDialogo) {
 
         String email = pDialogo.getDestinatario().getUsuario().getEmail();
-        ItfUsuarioChat usuario = null;
+        ComoUsuarioChat usuario = null;
         try {
             usuario = chatMatrix.getUsuarioByEmail(email);
         } catch (ErroConexaoServicoChat ex) {
