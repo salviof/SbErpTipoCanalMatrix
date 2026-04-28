@@ -8,8 +8,6 @@ import com.super_bits.modulosSB.SBCore.integracao.libRestClient.api.erp.reposito
 import br.org.coletivoJava.fw.api.erp.transportecomunicacao.MsgDisparoMatrix;
 import br.org.coletivoJava.fw.erp.implementacao.chat.ChatMatrixOrgimpl;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.coletivojava.fw.api.tratamentoErros.FabErro;
 
 @MsgDisparoMatrix
@@ -50,5 +48,13 @@ public class MsgDisparoMatriximpl extends RepositorioLinkEntidadesGenerico
     public void dispararRespostaComunicacao(
             ItfDialogo itfDialogo) {
 
+    }
+
+    @Override
+    public boolean validarDadosDisparo(ItfDialogo pDialogo) {
+        if (pDialogo.getDestinatario() == null || pDialogo.getDestinatario().getUsuario() == null || pDialogo.getDestinatario().getUsuario().getEmail() == null) {
+            return false;
+        }
+        return true;
     }
 }
