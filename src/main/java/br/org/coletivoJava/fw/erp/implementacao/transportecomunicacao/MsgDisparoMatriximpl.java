@@ -45,12 +45,6 @@ public class MsgDisparoMatriximpl extends RepositorioLinkEntidadesGenerico
     }
 
     @Override
-    public void dispararRespostaComunicacao(
-            ItfDialogo itfDialogo) {
-
-    }
-
-    @Override
     public boolean validarDadosDisparo(ItfDialogo pDialogo) {
         if (pDialogo.getDestinatario() == null || pDialogo.getDestinatario().getUsuario() == null || pDialogo.getDestinatario().getUsuario().getEmail() == null) {
             return false;

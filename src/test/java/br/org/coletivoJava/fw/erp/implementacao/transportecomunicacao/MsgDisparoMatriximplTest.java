@@ -5,18 +5,13 @@
 package br.org.coletivoJava.fw.erp.implementacao.transportecomunicacao;
 
 import br.org.coletivoJava.fw.erp.implementacao.transportecomunicacao.dados.UsuarioTestesComunicacao;
-import br.org.coletivojava.erp.comunicacao.transporte.ERPTipoCanalComunicacao;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
+import com.super_bits.modulosSB.SBCore.modulos.comunicacao.ERPTipoCanalComunicacao;
 import com.super_bits.modulosSB.SBCore.modulos.comunicacao.FabTipoComunicacao;
 import com.super_bits.modulosSB.SBCore.modulos.comunicacao.ItfDialogo;
 import com.super_bits.modulosSB.SBCore.modulos.servicosCore.ErroAcessandoCanalComunicacao;
 import org.coletivojava.fw.api.tratamentoErros.FabErro;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 import testesFW.TesteJUnitBasicoSemAcoes;
 
 /**
