@@ -8,7 +8,7 @@ import br.org.coletivoJava.fw.erp.implementacao.transportecomunicacao.dados.Usua
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
 import com.super_bits.modulosSB.SBCore.modulos.comunicacao.ERPTipoCanalComunicacao;
 import com.super_bits.modulosSB.SBCore.modulos.comunicacao.FabTipoComunicacao;
-import com.super_bits.modulosSB.SBCore.modulos.comunicacao.ItfDialogo;
+import com.super_bits.modulosSB.SBCore.modulos.comunicacao.ComoDialogo;
 import com.super_bits.modulosSB.SBCore.modulos.servicosCore.ErroAcessandoCanalComunicacao;
 import org.coletivojava.fw.api.tratamentoErros.FabErro;
 import org.junit.Test;
@@ -29,7 +29,7 @@ public class MsgDisparoMatriximplTest extends TesteJUnitBasicoSemAcoes {
     @Test
     public void testDispararInicioComunicacao() {
         UsuarioTestesComunicacao usuarionotificacao = new UsuarioTestesComunicacao();
-        ItfDialogo dialogo = SBCore.getServicoComunicacao().gerarComunicacaoSistema_Usuario(FabTipoComunicacao.NOTIFICAR,
+        ComoDialogo dialogo = SBCore.getServicoComunicacao().gerarComunicacaoSistema_Usuario(FabTipoComunicacao.NOTIFICAR,
                 usuarionotificacao, "Apenas teste", "Mensagem do teste de notificação via email");
         try {
             SBCore.getServicoComunicacao().dispararComunicacao(dialogo, ERPTipoCanalComunicacao.MATRIX);

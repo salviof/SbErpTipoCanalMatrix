@@ -3,7 +3,7 @@ package br.org.coletivoJava.fw.erp.implementacao.transportecomunicacao;
 import br.org.coletivoJava.fw.api.erp.chat.ERPChat;
 import br.org.coletivoJava.fw.api.erp.chat.ErroConexaoServicoChat;
 import br.org.coletivoJava.fw.api.erp.chat.model.ComoUsuarioChat;
-import com.super_bits.modulosSB.SBCore.modulos.comunicacao.ItfDialogo;
+import com.super_bits.modulosSB.SBCore.modulos.comunicacao.ComoDialogo;
 import com.super_bits.modulosSB.SBCore.integracao.libRestClient.api.erp.repositorioLinkEntidades.RepositorioLinkEntidadesGenerico;
 import br.org.coletivoJava.fw.api.erp.transportecomunicacao.MsgDisparoMatrix;
 import br.org.coletivoJava.fw.erp.implementacao.chat.ChatMatrixOrgimpl;
@@ -18,7 +18,7 @@ public class MsgDisparoMatriximpl extends RepositorioLinkEntidadesGenerico
     private static ChatMatrixOrgimpl chatMatrix = (ChatMatrixOrgimpl) ERPChat.MATRIX_ORG.getImplementacaoDoContexto();
 
     @Override
-    public String dispararInicioComunicacao(ItfDialogo pDialogo) {
+    public String dispararInicioComunicacao(ComoDialogo pDialogo) {
 
         String email = pDialogo.getDestinatario().getUsuario().getEmail();
         ComoUsuarioChat usuario = null;
@@ -45,7 +45,7 @@ public class MsgDisparoMatriximpl extends RepositorioLinkEntidadesGenerico
     }
 
     @Override
-    public boolean validarDadosDisparo(ItfDialogo pDialogo) {
+    public boolean validarDadosDisparo(ComoDialogo pDialogo) {
         if (pDialogo.getDestinatario() == null || pDialogo.getDestinatario().getUsuario() == null || pDialogo.getDestinatario().getUsuario().getEmail() == null) {
             return false;
         }
